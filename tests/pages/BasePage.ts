@@ -10,4 +10,10 @@ export class BasePage {
   async closeCookiesAlert() {
     await this.page.getByLabel('Уведомление об использовании').locator('button').click();
   }
+  async closeModalWindowRegistration() {
+    await this.page
+      .locator('.wdp-popup-module__header')
+      .getByRole('button', { name: 'Закрыть' })
+      .click();
+  }
 }

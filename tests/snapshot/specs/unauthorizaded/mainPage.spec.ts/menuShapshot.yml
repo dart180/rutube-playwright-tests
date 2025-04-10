@@ -22,6 +22,8 @@
       - link "Фильмы …"
     - listitem:
       - link "Топы категорий …"
+    - listitem:
+      - link "RUTUBE x PREMIER …"
   - separator
   - list:
     - listitem:
