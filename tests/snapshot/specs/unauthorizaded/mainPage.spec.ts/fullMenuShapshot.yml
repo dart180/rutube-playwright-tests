@@ -1,0 +1,107 @@
+- navigation:
+  - list:
+    - listitem:
+      - link "Главная"
+    - listitem:
+      - link "RUTUBE для блогеров"
+    - listitem:
+      - link "Каталог"
+    - listitem:
+      - link "Популярное"
+    - listitem:
+      - link "В топе"
+    - listitem:
+      - link "Shorts"
+    - listitem:
+      - link "ТВ онлайн"
+    - listitem:
+      - link "Трансляции"
+    - listitem:
+      - link "Моё"
+    - listitem:
+      - link "Фильмы"
+    - listitem:
+      - link "Топы категорий"
+    - listitem:
+      - link "RUTUBE x PREMIER"
+  - separator
+  - paragraph: Войдите, чтобы подписываться на каналы, комментировать видео и оставлять реакции
+  - button "Вход и регистрация"
+  - separator
+  - region "Моё":
+    - button "Моё":
+      - img
+    - list "Моё":
+      - listitem:
+        - link "Подписки"
+      - listitem:
+        - link "История просмотра"
+      - listitem:
+        - link "Плейлисты"
+      - listitem:
+        - link "Смотреть позже"
+  - separator
+  - region "По темам":
+    - button "По темам":
+      - img
+  - separator
+  - region "Cкачать приложения":
+    - text: RUTUBE всегда с вами
+    - list "RUTUBE всегда с вами":
+      - listitem:
+        - link "Файл для установки на Android"
+      - listitem:
+        - link "Ярлык для iOS"
+      - listitem:
+        - link "Установить из Huawei App Gallery"
+      - listitem:
+        - link "Установить из RuStore"
+      - listitem:
+        - link "Установить из RuMarket"
+      - listitem:
+        - link "Установить из Galaxy Store"
+  - text: Больше от RUTUBE
+  - list "Секция инструкции":
+    - listitem:
+      - link "SMART TV"
+    - listitem:
+      - link "RUTUBE Детям"
+    - listitem:
+      - link "RUTUBE Спорт"
+    - listitem:
+      - link "RUTUBE Новости"
+  - text: RUTUBE в других соцсетях
+  - list "Присоединяйтесь в социальных сетях":
+    - listitem:
+      - link "VK"
+    - listitem:
+      - link "OK"
+    - listitem:
+      - link "Telegram"
+    - listitem:
+      - link "Дзен"
+  - separator
+  - list "Оставте отзыв":
+    - listitem:
+      - link "Вопросы и ответы"
+    - listitem:
+      - link "Сообщить о проблеме"
+    - listitem:
+      - link "Написать в поддержку"
+  - region "Футер":
+    - list:
+      - listitem:
+        - link "О RUTUBE"
+      - listitem:
+        - link "Направления деятельности"
+      - listitem:
+        - link "Пользовательское соглашение"
+      - listitem:
+        - link "Конфиденциальность"
+      - listitem:
+        - link "Правовая информация"
+      - listitem:
+        - link "Рекомендательная система"
+      - listitem:
+        - link "Фирменный стиль"
+    - paragraph: /© \d+, RUTUBE/

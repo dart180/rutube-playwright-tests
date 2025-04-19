@@ -12,6 +12,9 @@ export class MainPage extends BasePage {
   private readonly headerNotificationsPopupLocator: Locator;
   private readonly authorizationModalLocator: Locator;
   private readonly switchToRegistrationModalButtonLocator: Locator;
+  private readonly menuButtonLocator: Locator;
+  private readonly openMenuAriaLocator: Locator;
+  private readonly changeThemeButtonLocator: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -39,10 +42,23 @@ export class MainPage extends BasePage {
       .contentFrame()
       .locator('div[role="form"]')
       .getByRole('button', { name: 'Зарегистрироваться' });
+    this.menuButtonLocator = this.page.getByRole('button', { name: 'Открыть меню навигации' });
+    this.openMenuAriaLocator = this.page.locator('.menu-content-module__menuOpen');
+    this.changeThemeButtonLocator = this.page.getByRole('button', {
+      name: 'Переключить на светлую тему',
+    });
   }
 
   async open() {
     this.page.goto('https://rutube.ru/');
+  }
+
+  async changeThemeToWhite() {
+    await this.changeThemeButtonLocator.click();
+  }
+
+  async openFullMenu() {
+    await this.menuButtonLocator.click();
   }
 
   async headerHasCorrectAriaShapshot() {
@@ -90,5 +106,13 @@ export class MainPage extends BasePage {
     await expect(this.authorizationModalLocator).toMatchAriaSnapshot({
       name: 'registrationModal.yml',
     });
+  }
+  async fullMenuHasCorrectAriaSnapshot() {
+    await expect(this.openMenuAriaLocator).toMatchAriaSnapshot({
+      name: 'fullMenuShapshot.yml',
+    });
+  }
+  async checkThemeAttributeValue(attributeValue: 'dark2021' | 'white2022') {
+    await expect(this.page.locator('html')).toHaveAttribute('data-pen-theme', attributeValue);
   }
 }
