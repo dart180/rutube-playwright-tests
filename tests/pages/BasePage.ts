@@ -6,14 +6,31 @@ export class BasePage {
   constructor(page: Page) {
     this.page = page;
   }
-
   async closeCookiesAlert() {
-    await this.page.getByLabel('Уведомление об использовании').locator('button').click();
+    const cookiesAlert = this.page.getByLabel('Уведомление об использовании').locator('button');
+    if (await cookiesAlert.isVisible()) {
+      await cookiesAlert.click();
+    }
   }
+
   async closeModalWindowRegistration() {
-    await this.page
-      .locator('.wdp-popup-module__header')
-      .getByRole('button', { name: 'Закрыть' })
-      .click();
+    const closeButton = this.page.getByRole('button', { name: 'Закрыть' });
+    if (await closeButton.isVisible()) {
+      await closeButton.click();
+    }
   }
+
+  async closeModalPopupNotification() {
+    const popup = this.page.locator('.push-notification-popup-module__wrapper-button');
+    if (await popup.isVisible()) {
+      await this.page.getByRole('button', { name: 'Не надо' });
+    }
+  }
+
+  // async closeCookiesAlert() {
+  //   await this.page.getByLabel('Уведомление об использовании').locator('button').click();
+  // }
+  // async closeModalWindowRegistration() {
+  //   await this.page.getByRole('button', { name: 'Закрыть' }).click();
+  // }
 }
