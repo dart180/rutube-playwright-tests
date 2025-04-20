@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 
 export class BasePage {
   readonly page: Page;
@@ -20,11 +20,18 @@ export class BasePage {
     }
   }
 
+  protected async checkAriaSnapshot(locator: Locator, ariaName: string) {
+    await expect(locator).toMatchAriaSnapshot({
+      name: ariaName,
+    });
+  }
+
   async closeModalPopupNotification() {
-    const popup = this.page.locator('.push-notification-popup-module__wrapper-button');
-    if (await popup.isVisible()) {
-      await this.page.getByRole('button', { name: 'Не надо' });
-    }
+    await this.page.getByRole('button', { name: 'Не надо' });
+    // const popup = this.page.locator('.push-notification-popup-module__wrapper-button');
+    // if (await popup.isVisible()) {
+    //   await this.page.getByRole('button', { name: 'Не надо' });
+    // }
   }
 
   // async closeCookiesAlert() {
